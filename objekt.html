@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>JavaScript And JSON</title>
+  </head>
+  <body>
+  	<h2>Links</h2>
+  	<ul id="links"></ul>
+    <script>
+      var info = {
+      	"full_name" : "Ray Villalobos",
+      	"title" : "Staff Author",
+      	"links" : {
+            "blog" : "http://iviewresource.com" ,
+            "facebook" : "http://facebook.com",
+            "youtube" : "http://youtube.com" ,
+            "podcast" : "http://feeds.feedburner.com",
+            "twitter" : "http://twitter.com"
+      	}
+      };
+      var output = "";
+      for(key in info.links){
+      	if(info.links.hasOwnProperty(key)){
+      		output += '<li>' +
+            '<a href="' + info.links[key] + 
+            '">' + key + '</a>'+'</li>';
+      	}
+      }
+      var update = document.getElementById('links');
+      update.innerHTML = output;
+    </script>
+  </body>
+</html>
